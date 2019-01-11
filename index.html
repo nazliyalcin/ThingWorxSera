@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <!-- Aframe -->
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <!-- <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script> -->
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> 
+    <!-- <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/events.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script> -->
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <!-- Physics -->
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/components/sphere-collider.js"></script>
+    <!-- Line -->
+    <script src="https://unpkg.com/aframe-line-component/dist/aframe-line-component.min.js"></script>
+    <!-- Curve  -->
+   
+    <script src="https://unpkg.com/aframe-curve-component/dist/aframe-curve-component.min.js"></script>
+    <script src="js/aframe-material.js"></script>
+    <script type="text/javascript">
+      AFRAME.ASSETS_PATH = "./assets";
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/switch.css">
+    
+  </head>
+  <body>
+    <script type="text/javascript" src="js/aframe-methods.js">
+
+    </script>
+    <img id="logo" src="ericsson_logo.png" style='left:0%;top:0px; z-index:2; position:fixed; width:5%; height:10%;display:none;' /> 
+    <label id="text" style=' position:fixed;top:10px;width:10%; z-index: 2; left:90%; display:none;color:white; left:5% ;font-size: 20px;'>Smart Sera</label>
+    <img id="banner" src="black-banner.png" style='top:0px; z-index:1; position:fixed; width:100%; height:10%;display:none;' /> 
+    <label id="switch" style='height:5.5%; position:fixed;top:10px;width:4.5%; z-index: 1; left:90%; display:none;'>
+        <input type="checkbox" >
+        <span class="slider round"></span>
+    </label>
+    <a-scene embedded  arjs="sourceType: webcam;trackingMethod: best; debugUIEnabled:false " >
+          
+          <a-assets>
+              <img id="arrow" src="arrows.png" /> 
+              <img id="temperature" src="temperature.png" /> 
+              <img id="humidity" src="humidity.png" /> 
+              <img id="loudness" src="loudness.png" /> 
+              <img id="illuminance" src="illuminance.png" /> 
+          </a-assets>
+          
+          
+             
+          <a-marker preset="custom" type='pattern' url='ericsson.patt' iot > 
+              
+           
+            <!-- Temperature-->
+            <a-image src="#temperature"  scale="2 2 0" rotation="-90 0 0" position="-2.0 0 -1.5"> </a-image>
+            <a-text id="text_temparature"  width="4" rotation="-90 0 0 "  position="-2.2 0.1 -1.2" ></a-text>
+            <a-text  width="3" rotation="-90 0 0 " value="Actual Temperature" position="-2.5 0.1 -0.80" ></a-text>
+            <!-- Illuminance -->
+            <a-image src="#illuminance"  scale="2 2 0" rotation="-90 0 0" position="2.0 0 -1.5"> </a-image>
+            <a-text id="text_illuminance"  width="4" rotation="-90 0 0 "  position="1.8 0.1 -1.2" ></a-text>
+            <a-text  width="3" rotation="-90 0 0 " value="Illuminance" position="1.7 0.1 -0.80" ></a-text>
+            <!-- Loudness -->
+            <a-image src="#loudness" scale="2 2 0" rotation="-90 0 0" position="-2.0 0 1.5"> </a-image>
+            <a-text id="text_loudness"  width="4" rotation="-90 0 0 "  position="-2.2 0.1 1.8" ></a-text>
+            <a-text  width="3" rotation="-90 0 0 " value="Loudness" position="-2.3 0.1 2.1" ></a-text>
+            <!-- Humidity -->
+            <a-image src="#humidity"  scale="2 2 0" rotation="-90 0 0" position="2.0 0 1.5"> </a-image>
+            <a-text id="text_humidity"  width="4" rotation="-90 0 0 "  position="1.8 0.1 1.8" ></a-text>
+            <a-text  width="3" rotation="-90 0 0 " value="Humidity" position="1.7 0.1 2.1" ></a-text>
+            
+            
+
+
+
+
+           
+
+            <!-- Arrows -->
+            <a-image src="#arrow" rotation="-90 0 0 " scale="2 2 0"> </a-image>
+        
+            
+            <a-box id="background" depth="0.01" height="3" width="3" rotation="-90 0 0 "
+                position="0.3 1 -0.25" opacity="0" ></a-box>
+
+            <!-- Bar Chart *******************************************************************    -->
+
+             <!-- Description Text -->
+             <a-text  width="2" color="black" rotation="-90 0 0" position="1.8 0 -1.5" value="Description Text"></a-text>
+            
+             <!-- X Line -->
+             <a-entity id="graph_line0" line="start: -0.6 1.5 1.1; end: 1.2 1.5 1.1; color: black; opacity:0" ></a-entity>
+             <a-entity id="graph_line1" line="start: -0.6 1.5 -1.1; end: 1.2 1.5 -1.1; color: black; opacity:0" ></a-entity>
+             <a-entity id="graph_line2" line="start: -0.6 1.5 -0.4; end: 1.2 1.5 -0.4; color: black; opacity:0 " ></a-entity>
+             <a-entity id="graph_line3" line="start: -0.6 1.5 -0.6; end: 1.2 1.5 -0.6; color: black; opacity:0" ></a-entity>
+             <a-entity id="graph_line4" line="start: -0.6 1.5 -0.1; end: 1.2 1.5 -0.1; color: black; opacity:0" ></a-entity>
+             <a-entity id="graph_line5" line="start: -0.6 1.5 0.4; end: 1.2 1.5 0.4; color: black; opacity:0" ></a-entity>
+   
+             <!-- Z Line -->  
+            <a-entity id="graph_line6" line="start: -0.6 1.5 -1.4; end: -0.6 1.5 1.1; color: black ; opacity:0" ></a-entity>
+
+            <!-- Values -->
+            <a-text id="text_height0" width="1.8" ></a-text>
+            <a-text id="text_height1" width="1.8" ></a-text>
+            <a-text id="text_height2" width="1.8" ></a-text>
+            <a-text id="text_height3" width="1.8" ></a-text>
+            <a-text id="text_height4" width="1.8" ></a-text>
+
+              <!-- 2014  -->
+              
+              <a-text id="text0" rotation="-90 0 0 " value="2014" color="black"  width="1.5" opacity="0"></a-text>
+
+              <a-box id="box0" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
+              color="tomato" opacity="0"> </a-box>
+              <!-- 2015 -->
+              <a-text id="text1" rotation="-90 0 0 " value="2015" color="black" width="1.5" opacity="0"></a-text>
+  
+              <a-box id="box1" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
+              color="green" opacity="0"></a-box>
+               <!-- 2016 -->
+              <a-text id="text2" rotation="-90 0 0 " value="2016" color="black"  width="1.5" opacity="0"></a-text>
+  
+              <a-box id="box2" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
+              color="blue" opacity="0"></a-box>
+               <!-- 2017 -->
+              <a-text id="text3" rotation="-90 0 0 " value="2017" color="black"  width="1.5" opacity="0"></a-text>
+  
+              <a-box id="box3" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
+              color="gray" opacity="0"></a-box>
+             
+           
+
+          </a-marker> 
+          
+            <!-- <a-entity camera >
+              <a-entity cursor="fuse: true; fuseTimeout: 500"
+              position="0 0 -1"
+              geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+              material="color: black; shader: flat">
+             </a-entity>
+            </a-entity>  -->
+
+            <a-entity laser-controls="hand: right"></a-entity>
+
+            <a-entity> <a-camera ></a-camera></a-entity>
+              
+	 </a-scene>
+
+   
+
+    
+  <body>
+</html>
