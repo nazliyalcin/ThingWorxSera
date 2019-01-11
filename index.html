@@ -7,9 +7,6 @@
     <!-- <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script> -->
     <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> 
-    <!-- <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/events.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script> -->
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <!-- Ajax -->
@@ -24,36 +21,34 @@
    
     <script src="https://unpkg.com/aframe-curve-component/dist/aframe-curve-component.min.js"></script>
     <script src="js/aframe-material.js"></script>
-    <script type="text/javascript">
-      AFRAME.ASSETS_PATH = "./assets";
-    </script>
     <link rel="stylesheet" type="text/css" href="css/switch.css">
     
   </head>
   <body>
-    <script type="text/javascript" src="js/aframe-methods.js">
+    <script type="text/javascript" src="js/aframe-methods.js"></script>
 
-    </script>
-    <img id="logo" src="ericsson_logo.png" style='left:0%;top:0px; z-index:2; position:fixed; width:5%; height:10%;display:none;' /> 
+    <img id="logo" src="img/ericsson_logo.png" style='left:0%;top:0px; z-index:2; position:fixed; width:5%; height:10%;display:none;' /> 
     <label id="text" style=' position:fixed;top:10px;width:10%; z-index: 2; left:90%; display:none;color:white; left:5% ;font-size: 20px;'>Smart Sera</label>
-    <img id="banner" src="black-banner.png" style='top:0px; z-index:1; position:fixed; width:100%; height:10%;display:none;' /> 
+    <img id="banner" src="img/black-banner.png" style='top:0px; z-index:1; position:fixed; width:100%; height:10%;display:none;' /> 
     <label id="switch" style='height:5.5%; position:fixed;top:10px;width:4.5%; z-index: 1; left:90%; display:none;'>
         <input type="checkbox" >
         <span class="slider round"></span>
     </label>
+
+
     <a-scene embedded  arjs="sourceType: webcam;trackingMethod: best; debugUIEnabled:false " >
           
           <a-assets>
-              <img id="arrow" src="arrows.png" /> 
-              <img id="temperature" src="temperature.png" /> 
-              <img id="humidity" src="humidity.png" /> 
-              <img id="loudness" src="loudness.png" /> 
-              <img id="illuminance" src="illuminance.png" /> 
+              <img id="arrow" src="img/arrows.png" /> 
+              <img id="temperature" src="img/temperature.png" /> 
+              <img id="humidity" src="img/humidity.png" /> 
+              <img id="loudness" src="img/loudness.png" /> 
+              <img id="illuminance" src="img/illuminance.png" /> 
           </a-assets>
           
           
              
-          <a-marker preset="custom" type='pattern' url='ericsson.patt' iot > 
+          <a-marker preset="custom" type='pattern' url='img/ericsson.patt' iot > 
               
            
             <!-- Temperature-->
@@ -73,12 +68,6 @@
             <a-text id="text_humidity"  width="4" rotation="-90 0 0 "  position="1.8 0.1 1.8" ></a-text>
             <a-text  width="3" rotation="-90 0 0 " value="Humidity" position="1.7 0.1 2.1" ></a-text>
             
-            
-
-
-
-
-           
 
             <!-- Arrows -->
             <a-image src="#arrow" rotation="-90 0 0 " scale="2 2 0"> </a-image>
@@ -135,14 +124,7 @@
            
 
           </a-marker> 
-          
-            <!-- <a-entity camera >
-              <a-entity cursor="fuse: true; fuseTimeout: 500"
-              position="0 0 -1"
-              geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-              material="color: black; shader: flat">
-             </a-entity>
-            </a-entity>  -->
+        
 
             <a-entity laser-controls="hand: right"></a-entity>
 
