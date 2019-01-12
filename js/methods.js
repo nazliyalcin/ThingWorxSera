@@ -38,7 +38,7 @@ AFRAME.registerComponent('iot', {
      this.httpGetAsync(url);
     
 
-    var m = document.querySelector("a-marker");
+    var m = document.querySelector("a-marker-camera");
     
     m.addEventListener("markerFound", (e)=>{
         var switchlabel = document.querySelector("#switch");
