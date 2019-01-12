@@ -20,6 +20,8 @@
     <!-- Curve  -->
    
     <script src="https://unpkg.com/aframe-curve-component/dist/aframe-curve-component.min.js"></script>
+
+     <!-- Embedded -->
     <script src="js/aframe-material.js"></script>
     <link rel="stylesheet" type="text/css" href="css/switch.css">
     
@@ -51,6 +53,7 @@
              
           <a-marker id="vuforia" preset="custom" type='pattern' url='img/ericsson.patt' iot > 
         
+           
            
             <!-- Temperature-->
             <a-image src="#temperature"  scale="2 2 0" rotation="-90 0 0" position="-2.0 0 -1.5"> </a-image>
@@ -127,11 +130,7 @@
           </a-marker> 
 
 
-          <a-marker preset="custom" type='pattern' url='img/ericsson_sade.patt' > 
-            <a-image src="#temperature"  scale="2 2 0" rotation="-90 0 0" position="-2.0 0 -1.5"> </a-image>
-            <a-text id="text_temparature"  width="4" rotation="-90 0 0 "  position="-2.2 0.1 -1.2" ></a-text>
-            <a-text  width="3" rotation="-90 0 0 " value="Actual Temperature" position="-2.5 0.1 -0.80" ></a-text>
-          </a-marker>
+
         
 
             <a-entity laser-controls="hand: right"></a-entity>
