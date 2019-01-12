@@ -28,6 +28,7 @@
   </head>
   <body>
     <script type="text/javascript" src="js/methods.js"></script>
+   
     <img id="logo" src="img/ericsson_logo.png" style='left:0%;top:0px; z-index:2; position:fixed; width:5%; height:10%;display:none;' /> 
     <label id="text" style=' position:fixed;top:10px;width:10%; z-index: 2; left:90%; display:none;color:white; left:5% ;font-size: 20px;'>Smart Sera</label>
     <img id="banner" src="img/black-banner.png" style='top:0px; z-index:1; position:fixed; width:100%; height:10%;display:none;' /> 
@@ -35,7 +36,6 @@
         <input type="checkbox" >
         <span class="slider round"></span>
     </label>
-    
 
 
     <a-scene embedded  arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled:false " >
@@ -47,13 +47,13 @@
               <img id="loudness" src="img/loudness.png" /> 
               <img id="illuminance" src="img/illuminance.png" /> 
           </a-assets>
-          
+
      
           
              
           <a-marker id="vuforia" preset="custom" type='pattern' url='img/ericsson.patt' iot > 
-        
-           
+
+            
            
             <!-- Temperature-->
             <a-image src="#temperature"  scale="2 2 0" rotation="-90 0 0" position="-2.0 0 -1.5"> </a-image>
@@ -125,17 +125,17 @@
               <a-box id="box3" depth="0.1" height="1" width="0.1" rotation="-90 0 0 "
               color="gray" opacity="0"></a-box>
              
-           
+              
 
           </a-marker> 
 
 
 
         
-
+          <a-entity id="camera"> <a-camera ></a-camera></a-entity> 
             <a-entity laser-controls="hand: right"></a-entity>
 
-            <a-entity id="camera"> <a-camera ></a-camera></a-entity>
+        
               
 	 </a-scene>
 
