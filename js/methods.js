@@ -37,8 +37,14 @@ AFRAME.registerComponent('iot', {
 
      this.httpGetAsync(url);
     
-   
-   
+    var camera = document.getElementById("camera");
+    console.log("CAMERA-----------------",camera.getAttribute("position"));
+
+    var marker_vuforia = document.getElementById("vuforia");
+    console.log("marker_vuforia-------------",marker_vuforia.getAttribute("position"));
+
+    camera.setAttribute('position',marker_vuforia.getAttribute("position"));
+    
     var m = document.querySelector("a-marker");
 
     
