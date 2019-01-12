@@ -57,7 +57,8 @@ AFRAME.registerComponent('iot', {
         switchlabel.style.display = "block";
         text.style.display = "block"
         banner.style.display = "block";
-        camera.setAttribute('position',marker_vuforia.getAttribute("position"));
+        var x = marker_vuforia.getAttribute("position");
+        camera.setAttribute('position',"0 0 0");
         console.log("marker_vuforia-------------",marker_vuforia.getAttribute("position"));
         console.log("CAMERA-----------------",camera.getAttribute("position"));
         
