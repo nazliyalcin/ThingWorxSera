@@ -42,7 +42,7 @@ AFRAME.registerComponent('iot', {
 
     var marker_vuforia = document.getElementById("vuforia");
  
-    var m = document.querySelector("a-marker");
+    var m = document.querySelector("a-marker-camera");
 
 
     
@@ -59,8 +59,8 @@ AFRAME.registerComponent('iot', {
         banner.style.display = "block";
        var x = marker_vuforia.getAttribute("position");
         // camera.setAttribute('position',"1 0 2");
-        console.log("marker_vuforia-------------",marker_vuforia.getAttribute("position"));
-        console.log("CAMERA-----------------",camera.getAttribute("position"));
+        // console.log("marker_vuforia-------------",marker_vuforia.getAttribute("position"));
+        // console.log("CAMERA-----------------",camera.getAttribute("position"));
         
         inputcheck.addEventListener("change",(e)=>{
           if(inputcheck.checked)
