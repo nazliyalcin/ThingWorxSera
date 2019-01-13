@@ -91,7 +91,7 @@ input:checked + .slider:before {
   }
   
   #text{
-    font-size: 50px;
+    font-size: 20px;
     margin-left:80px;
   }
 
