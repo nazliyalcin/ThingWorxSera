@@ -9,16 +9,16 @@
   
   .slider:before {
 
-    height: 13px;
-    width: 13px;
-    left: 2px;
-    bottom: 2px;
+    height: 6.5px;
+    width: 6.5px;
+    left: 1px;
+    bottom: 1px;
 
   }
 
   #switch {
-    width: 2.5%;
-    height: 2.75%;
+    width: 5%;
+    height: 5.5%;
   }
 
 }
