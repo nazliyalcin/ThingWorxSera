@@ -92,7 +92,8 @@ input:checked + .slider:before {
   
   #text{
     font-size: 20px;
-    margin-left:80px;
+    margin-left:60px;
+    top:5px;
   }
 
 
