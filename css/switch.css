@@ -4,7 +4,13 @@
   width: 60px;
   height: 34px;
 }
-
+@media only screen and (max-width: 768px) {
+  .switch
+  {
+    width: 2.5%;
+    height: 3.5%;
+  }
+}
 .switch input { 
   opacity: 0;
   width: 0;

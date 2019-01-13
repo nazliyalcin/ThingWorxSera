@@ -58,9 +58,7 @@ AFRAME.registerComponent('iot', {
         text.style.display = "block"
         banner.style.display = "block";
        var x = marker_vuforia.getAttribute("position");
-        // camera.setAttribute('position',"1 0 2");
-        // console.log("marker_vuforia-------------",marker_vuforia.getAttribute("position"));
-        // console.log("CAMERA-----------------",camera.getAttribute("position"));
+
         
         inputcheck.addEventListener("change",(e)=>{
           if(inputcheck.checked)
