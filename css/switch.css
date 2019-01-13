@@ -10,10 +10,10 @@
   
   .slider:before {
 
-    height: 6.5px;
-    width: 6.5px;
-    left: 1px;
-    bottom: 1px;
+    height: 3.25px;
+    width: 3.25px;
+    left: 0.5px;
+    bottom: 0.5px;
 
   }
 
