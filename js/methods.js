@@ -42,7 +42,7 @@ AFRAME.registerComponent('iot', {
 
     var marker_vuforia = document.getElementById("vuforia");
  
-    var m = document.querySelector("a-marker-camera");
+    var m = document.querySelector("a-marker");
 
 
     
