@@ -3,6 +3,7 @@
   display: inline-block;
   width: 60px;
   height: 34px;
+  left:90%;
 }
 @media only screen and (max-width: 768px) {
 
@@ -19,6 +20,7 @@
   #switch {
     width: 15%;
     height: 5.5%;
+    left:80%;
   }
 
 }
