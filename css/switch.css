@@ -5,57 +5,7 @@
   height: 34px;
   left:90%;
 }
-@media only screen and (max-width: 768px) {
 
-  
-  .slider:before {
-
-    height: 10%;
-    width: 10%;
-    left: 10%;
-    bottom: 10%px;
-
-  }
-
-  #switch {
-    width: 15%;
-    height: 5.5%;
-    left:80%;
-  }
-
-  #banner{
-    width:100%; 
-    height:10%;
-  }
-
-  #logo{
-    width:10%; 
-    height:8%;
-  }
-  
-  #text{
-    font-size: 10px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-
-  #switch {
-    width: 5%;
-    height: 5.5%;
-  }
-  #banner{
-    width:100%; 
-    height:10%;
-  }
-  #logo{
-    width:5%; 
-    height:10%;
-  }
-  #text{
-    font-size: 20px;
-  }
-}
 .switch input { 
   opacity: 0;
   width: 0;
@@ -107,4 +57,60 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+#text{
+  font-size: 20px;
+  left: 5%;
+}
+@media only screen and (max-width: 768px) {
+
+  
+  .slider:before {
+
+    height: 80%;
+    width: 50%;
+    left: 10%;
+    bottom: 10%;
+
+  }
+
+  #switch {
+    width: 15%;
+    height: 5.5%;
+    left:85%;
+  }
+
+  #banner{
+    width:200%; 
+    height:10%;
+  }
+
+  #logo{
+    width:15%; 
+    height:10%;
+  }
+  
+  #text{
+    font-size: 50px;
+    margin-left:80px;
+  }
+
+
+}
+
+@media only screen and (min-width: 992px) {
+
+  #switch {
+    width: 5%;
+    height: 5.5%;
+  }
+  #banner{
+    width:100%; 
+    height:10%;
+  }
+  #logo{
+    width:5%; 
+    height:10%;
+  }
+
 }
