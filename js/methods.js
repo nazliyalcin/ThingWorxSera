@@ -40,6 +40,10 @@ AFRAME.registerComponent('iot', {
     var camera = document.getElementById("camera");
 
 
+    console.log("Scene Width-----  "+ window.screen.availWidth,
+     "Scene height---"+ window.screen.availHeight
+    );
+
     var marker_vuforia = document.getElementById("vuforia");
  
     var m = document.querySelector("a-marker");

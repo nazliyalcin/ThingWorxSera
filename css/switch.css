@@ -60,8 +60,8 @@ input:checked + .slider:before {
 }
 #text{
   font-size: 20px;
-  left: 5%;
-  top:10px;
+  left: 6%;
+  top:15px;
 }
 @media only screen and (max-width: 768px) {
 
