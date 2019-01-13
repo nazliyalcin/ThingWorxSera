@@ -61,6 +61,7 @@ input:checked + .slider:before {
 #text{
   font-size: 20px;
   left: 5%;
+  top:10px;
 }
 @media only screen and (max-width: 768px) {
 
