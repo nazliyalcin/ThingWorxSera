@@ -39,16 +39,17 @@ AFRAME.registerComponent('iot', {
     
     var camera = document.getElementById("camera");
 
+      // Service Worker
+    if ('serviceWorker' in navigator) { 
+     navigator.serviceWorker.register('js/service-worker.js');
 
-    console.log("Scene Width-----  "+ window.screen.availWidth,
-     "Scene height---"+ window.screen.availHeight
-    );
+   }
 
     var marker_vuforia = document.getElementById("vuforia");
  
     var m = document.querySelector("a-marker");
 
-
+     
     
     m.addEventListener("markerFound", (e)=>{
         var switchlabel = document.querySelector("#switch");
